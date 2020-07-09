@@ -1,2 +1,2 @@
-# spring-cloud-microservices
+# Spring Cloud Microservices
 Spring cloud microservices
