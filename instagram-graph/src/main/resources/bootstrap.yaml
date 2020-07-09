@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: instagram-graph
+    version: 0.0.1
+  cloud:
+    config:
+      uri: http://localhost:8888
+      name: instagram-graph, common

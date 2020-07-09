@@ -1,0 +1,13 @@
+package com.instagram.post;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class InstagramPostApplicationTests {
+
+    @Test
+    void contextLoads() {
+    }
+
+}

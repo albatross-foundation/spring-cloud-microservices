@@ -1,0 +1,54 @@
+server:
+  port: 8762
+
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
+
+zuul:
+  ignored-services: '*'
+  routes:
+    instagram-auth:
+      path: /auth/**
+      service-id: instagram-auth
+      sensitive-headers: Cookie,Set-Cookie
+    instagram-media:
+      path: /media/**
+      service-id: instagram-media
+      sensitive-headers: Cookie,Set-Cookie
+    instagram-post:
+      path: /post/**
+      service-id: instagram-post
+      sensitive-headers: Cookie,Set-Cookie
+    instagram-graph:
+      path: /graph/**
+      service-id: instagram-graph
+      sensitive-headers: Cookie,Set-Cookie
+    instagram-news:
+      path: /news/**
+      service-id: instagram-news
+      sensitive-headers: Cookie,Set-Cookie
+
+ribbon:
+  ConnectTimeout: 60000
+  ReadTimeout: 600000
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 600000
+
+security:
+  basic:
+    enable: false
+
+  jwt:
+    uri: /auth/**
+    header: Authorization
+    prefix: Bearer
+    expiration: 86400
+    secret: JwtSecretKey

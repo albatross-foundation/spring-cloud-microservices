@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: instagram-post
+    version: 0.0.1
+  cloud:
+    config:
+      uri: http://localhost:8888
+      name: instagram-post, common
